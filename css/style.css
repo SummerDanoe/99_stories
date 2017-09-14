@@ -2,21 +2,26 @@
 /* CSS Document */
 
 
-/* =====Dropdown=====*/
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+/* =====Fonts=====*/
+
+*{
+	font-family: 'Roboto', sans-serif;	/* originele font family van ns.nl :NS Sans,Segoe UI,Myriad,Verdana,sans-serif */
 }
 
-.dropdown {
+/* =====Dropdown=====*/
+.dropbtn {
+	box-sizing:border-box;
+    background-color: #F5C832;
+    color: white;
+    padding: 16px;
+	width: 99vw;/*ik wil deze rechthoek over de hele breedte. ik snap er geen drol van. pls help*/
+	border: none;
+    cursor: pointer;
+}
+nav {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -33,15 +38,18 @@
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
 
-.dropdown:hover .dropdown-content {
+nav:hover .dropdown-content {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.dropbtn:hover .dropbtn {
+    background-color: #F5C832;
 }
+
 /* =====main=====*/
 h1, .beschrijving{
     text-align:center;
@@ -60,9 +68,6 @@ input{
 	margin-bottom:1rem;
 	
 }
-button{
-	
-}
 
 /*====aside====*/
 
@@ -76,9 +81,4 @@ section{
 
 aside{
 	border-top: solid;
-}
-/* =====Fonts=====*/
-
-* {
-	font-family: 'Roboto', sans-serif;	/* originele font family van ns.nl :NS Sans,Segoe UI,Myriad,Verdana,sans-serif */
 }
