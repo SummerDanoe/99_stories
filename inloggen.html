@@ -4,8 +4,45 @@
 <meta charset="UTF-8">
 <title>inloggen</title>
 <link rel="stylesheet" type="text/css" href="css/styleinloggen.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- fonts -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+<header>
+ <a><img src="images/nslogo.png"></a>
+  <button><img src="images/hamburger.png"></button>
+ 	 <nav>
+    	<a href="#">Verhalen</a>
+    	<a href="inloggen.html">inloggen</a>
+    </nav>
+</header>
+  
+   <main>  
+   <h1>Inschrijven</h1>
+    <form>
+			<label name="voornaam">Voornaam</label>
+            <input name="voornaam" type="text">
+            
+            <label name="achternaam">Achternaam</label>
+            <input name="achternaam" type="text" required>
+            
+            <label name="gebortedatum">Gebortedatum</label>
+            <input name="gebortedatum" type="date" required>
+            
+            <label name="telefoon">Telefoon</label>
+            <input name="telefoon" type="tel" value="+31" required>
+            
+            <label name="email">Email</label>
+            <input name="email" type="email" required>
+            
+            <label name="wachtwoord">Wachtwoord</label>
+            <input name="wachtwoord" type="password" required>
+            
+            <button type="submit">verstuur</button>
+          
+    </form>
+</main> 
+
 </body>
 </html>
