@@ -1,72 +1,57 @@
 @charset "UTF-8";
 /* CSS Document */
-*{
+* {
 	box-sizing: border-box;
-	font-family:Segoe UI,Myriad,Verdana,sans-serif;
-	
+	font-family: Segoe UI, Myriad, Verdana, sans-serif;
 }
-
-body{
-	background-color:#E6E6E9;
-	background-image:url("../images/meneer1.jpg");
-	background-repeat:no-repeat;
+body {
+	background-color: #E6E6E9;
+	background-image: url("../images/meneer1.jpg");
+	background-repeat: no-repeat;
 	background-size: 100% auto;
-
 }
-
 /*=================
   ====Dropdown=====
   =================*/
-header{
-	position:fixed;
-	background-color:#ffc917;
-	width:100vw;
-	top:0;
-	left:0;
-	height:2em;
+header {
+	position: fixed;
+	background-color: #ffc917;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	height: 2em;
 }
-header img{
-	/*doe dit later ik heb hier echt geen zin in nu*/
+header img {
+/*doe dit later ik heb hier echt geen zin in nu*/
 }
-
 #iPadMenu {
-	display:none;
-    position: absolute;
-    list-style: none;
-    top: 30px;
-    left: 0;
-    padding: 7px;
-    width: 320px;
+	display: none;
+	position: absolute;
+	list-style: none;
+	top: 30px;
+	left: 0;
+	padding: 7px;
+	width: 320px;
 }
 nav a {
-    display: block;
-    margin: 0;
-    padding: 7px 10px;
-    background: #fff;
-    color: #030303;
-    text-decoration: none;
+	display: block;
+	margin: 0;
+	padding: 7px 10px;
+	background: #fff;
+	color: #030303;
+	text-decoration: none;
 }
 nav a:hover, nav a:active {
-    color: #fff;
-    background: #058cf5;
+	color: #fff;
+	background: #058cf5;
 }
-
 /*=================
   =====Kaartje=====
   =================*/
-section {
-	width: 15em;
-	height: 23em;
-	margin:2em;
-	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
-	z-index:-1;/*zorgt ervoor dat dropdown eroverheen komt*/
-	background-color:white;/*vult ruimte op tussen span en summary*/
-	flex-grow:0.3;
-}
 /*bovenste gedeelte*/
 
 span {
-	display:block;
+	display: block;
 	overflow: hidden;
 	position: relative;
 }
@@ -74,18 +59,18 @@ span .rondje {
 	position: absolute;
 	top: 1.5em;
 	right: 1.5em;
-	z-index: 1;/*plaatst rondje voor img voor alles*/
+	z-index: 1;
 	background-color: darkred;
 	width: 3.5em;
 	height: 3.5em;
 	padding: 1em 0;
 	border-radius: 100%;
 	color: white;
-	font-weight: 500; /*maakt font minder bold*/
+	font-weight: 500;
 	text-align: center;
 }
-span .rondje p{
-	margin-top:0.15em;
+span .rondje p {
+	margin-top: 0.15em;
 }
 span img {
 	width: 120%;
@@ -112,7 +97,6 @@ section summary h3 {
 	font-weight: 400;
 }
 section summary p {
-	display: none;
 	color: black;
 	font-size: 0.8em;
 	line-height: 1.8em;
@@ -121,28 +105,82 @@ section summary footer {
 	margin: 2em 0 0;
 	color: black;
 }
+/*=================================================
+  =====hover kaartje HELP HIER IS HET PROBLEEM=====
+  =================================================*/
+
+
+section {
+	width: 15em;
+	margin: 2em;
+	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
+	z-index: -1;
+	background-color: white;
+	flex-grow: 0.3;
+	max-height: 23em;/* hoogte als de kaart ingeklapt is*/
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	-webkit-transition: .5s ease-out;
+	transition: .5s ease-out;
+}
+section.active {
+	/* de hoogte van de kaart indien uitgeschoven */
+	height: 30em;
+}
+
+/*=========================
+  ===handvat van kaartje===
+  =========================*/
+
+section .card-handvat {
+	background-color: rgba(255, 255, 255, .75);
+	color: rgb(55, 51, 47); /* kleur van het pijltje op het handvat */
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	bottom: 0;
+	left: 50%;
+	height: 1.5rem;
+	width: 3rem;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	font-size: 1rem;
+	text-align: center;
+	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+section .card-handvat::after {
+	content: "\25BC";
+	position: absolute;
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -25%);
+}
+section.active .card-handvat::after {
+	content: "\25B2";
+	transform: translate(-50%, -50%);
+}
 /*======================
   ===bovenste kaartje===
   ======================*/
 section:first-of-type {
-	
 	height: 15em;
-
-	background-color:rgba(0, 48, 130/*, 0.8*/);/*opacity minder dan 1 is lelijk*/
-
+	background-color: rgba(0, 48, 130/*, 0.8*/);/*opacity minder dan 1 is lelijk*/
 }
-
 /*=========================
   ==Positionering Kaartje==
   =========================*/
 
 main {
-	margin-top:7em;
+	margin-top: 7em;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-
 }
+
 /*=================
   ===breakpoints===
   =================
@@ -152,59 +190,52 @@ standaard sheet is voor mobiel
 60em
 */
 /*breakpoint 2*/
-@media(min-width:40em){
-	body{
-		background-image:url(../images/meneer2.jpg)
-	}
-	
-	main{
-		flex-flow: row wrap;
-		justify-content:space-around;
-
-	}
-	section{
-		flex-grow:0;
-	}
-	section:first-of-type {
+@media(min-width:40em) {
+body {
+	background-image: url(../images/meneer2.jpg)
+}
+main {
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+section {
+	flex-grow: 0;
+}
+section:first-of-type {
 	margin: 0 12em; /*door margin breed te maken word het eerste item gecentreerd als er twee kolommen zijn*/
 }
-
 }
-
 
 /*breakpoint 3*/
-@media(min-width:58em){ /*het is geen rond getal omdat het anders niet mooi loopt met de flexbox breakpoints*/
-	body{
-		background-image:url(../images/meneertje.jpg)
-	}
-
-	section:first-of-type {
-	margin: 0 21em; 
-
+@media(min-width:58em) { /*het is geen rond getal omdat het anders niet mooi loopt met de flexbox breakpoints*/
+body {
+	background-image: url(../images/meneertje.jpg)
 }
-
+section:first-of-type {
+	margin: 0 21em;
+}
 }
 
 /*breakpoint 4*/
-@media(min-width:76em){ 
-	body{
-		background-image:url(../images/meneer3.jpg)
-	}
+@media(min-width:76em) {
+body {
+	background-image: url(../images/meneer3.jpg)
+}
+section:first-of-type {
+	margin: 0 30em;
+}
+}
 
-	section:first-of-type {
-	margin: 0 30em; 
+@media(min-width:95em) {
+section:first-of-type {
+	margin: 0 40em;
 }
 }
-@media(min-width:95em){ 
 
-	section:first-of-type {
-	margin: 0 40em; 
-}
-}
 /*breakpoint 5*/
-@media(min-width:100em){/*mijn beeldscherm thuis is extreem groot, en ik heb geen zin om daar rekening mee te houden.*/
-	*{
-		background-color:red;
-		color:red;
-	}
+@media(min-width:100em) {/*mijn beeldscherm thuis is extreem groot, en ik heb geen zin om daar rekening mee te houden.*/
+* {
+	background-color: red;
+	color: red;
+}
 }
