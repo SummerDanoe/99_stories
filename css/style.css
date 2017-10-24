@@ -8,9 +8,10 @@
 
 body{
 	background-color:#E6E6E9;
-	background-image:url("../images/meneertje.jpg");
+	background-image:url("../images/meneer1.jpg");
 	background-repeat:no-repeat;
 	background-size: 100% auto;
+
 }
 
 /*=================
@@ -60,7 +61,7 @@ section {
 	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
 	z-index:-1;/*zorgt ervoor dat dropdown eroverheen komt*/
 	background-color:white;/*vult ruimte op tussen span en summary*/
-
+	flex-grow:0.3;
 }
 /*bovenste gedeelte*/
 
@@ -96,14 +97,14 @@ section summary {
 	width: 100%;
 	padding: 1em;
 }
-section summary h1 {
+section summary h2 {
 	margin: 0;
 	padding-bottom: 0.5em;
 	color: black;
 	font-size: 1.5em;
 	font-weight: 700;
 }
-section summary h2 {
+section summary h3 {
 	margin: 0;
 	padding: 0 0 1em;
 	color: darkred;
@@ -120,12 +121,90 @@ section summary footer {
 	margin: 2em 0 0;
 	color: black;
 }
+/*======================
+  ===bovenste kaartje===
+  ======================*/
+section:first-of-type {
+	
+	height: 15em;
+
+	background-color:rgba(0, 48, 130/*, 0.8*/);/*opacity minder dan 1 is lelijk*/
+
+}
+
 /*=========================
   ==Positionering Kaartje==
   =========================*/
 
 main {
+	margin-top:7em;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: center;
+
+}
+/*=================
+  ===breakpoints===
+  =================
+
+standaard sheet is voor mobiel
+40em+ is voor tablet
+60em
+*/
+/*breakpoint 2*/
+@media(min-width:40em){
+	body{
+		background-image:url(../images/meneer2.jpg)
+	}
+	
+	main{
+		flex-flow: row wrap;
+		justify-content:space-around;
+
+	}
+	section{
+		flex-grow:0;
+	}
+	section:first-of-type {
+	margin: 0 12em; /*door margin breed te maken word het eerste item gecentreerd als er twee kolommen zijn*/
+}
+
+}
+
+
+/*breakpoint 3*/
+@media(min-width:58em){ /*het is geen rond getal omdat het anders niet mooi loopt met de flexbox breakpoints*/
+	body{
+		background-image:url(../images/meneertje.jpg)
+	}
+
+	section:first-of-type {
+	margin: 0 21em; 
+
+}
+
+}
+
+/*breakpoint 4*/
+@media(min-width:76em){ 
+	body{
+		background-image:url(../images/meneer3.jpg)
+	}
+
+	section:first-of-type {
+	margin: 0 30em; 
+}
+}
+@media(min-width:95em){ 
+
+	section:first-of-type {
+	margin: 0 40em; 
+}
+}
+/*breakpoint 5*/
+@media(min-width:100em){/*mijn beeldscherm thuis is extreem groot, en ik heb geen zin om daar rekening mee te houden.*/
+	*{
+		background-color:red;
+		color:red;
+	}
 }
