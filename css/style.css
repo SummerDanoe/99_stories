@@ -16,6 +16,17 @@ body{
 /*=================
   ====Dropdown=====
   =================*/
+header{
+	position:fixed;
+	background-color:#ffc917;
+	width:100vw;
+	top:0;
+	left:0;
+	height:2em;
+}
+header img{
+	/*doe dit later ik heb hier echt geen zin in nu*/
+}
 
 #iPadMenu {
 	display:none;
@@ -24,7 +35,6 @@ body{
     top: 30px;
     left: 0;
     padding: 7px;
-    background: orange;
     width: 320px;
 }
 nav a {
@@ -33,7 +43,6 @@ nav a {
     padding: 7px 10px;
     background: #fff;
     color: #030303;
-    font: bold 1.2em Helvetica, Arial, sans-serif;
     text-decoration: none;
 }
 nav a:hover, nav a:active {
@@ -50,15 +59,17 @@ section {
 	margin:2em;
 	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
 	z-index:-1;/*zorgt ervoor dat dropdown eroverheen komt*/
+	background-color:white;/*vult ruimte op tussen span en summary*/
 
 }
 /*bovenste gedeelte*/
 
-section header {
+span {
+	display:block;
 	overflow: hidden;
 	position: relative;
 }
-section header .rondje {
+span .rondje {
 	position: absolute;
 	top: 1.5em;
 	right: 1.5em;
@@ -72,10 +83,10 @@ section header .rondje {
 	font-weight: 500; /*maakt font minder bold*/
 	text-align: center;
 }
-section header .rondje p{
+span .rondje p{
 	margin-top:0.15em;
 }
-section header img {
+span img {
 	width: 120%;
 }
 /*onderste gedeelte*/
