@@ -17,19 +17,20 @@ document.getElementById('menuButton').onclick = function() {
 
 };
 //kaartjes in en uit klap
-// bron: Sanne 't Hooft project 1
-(function() {
-	
-	var cmdaCards = document.querySelectorAll("section");
-	for (var i=0;i<cmdaCards.length;i++) {
-		
-		var handvat = document.createElement("span");
-		handvat.classList.add("card-handvat"); 
-		cmdaCards[i].appendChild(handvat);
-		
-		handvat = cmdaCards[i].querySelector(".card-handvat");
-		handvat.addEventListener("click", function(event){
-			this.parentNode.classList.toggle("active");
-		});
-	}
-})();
+// bron: Jhttps://codepen.io/joostf/pen/bwrryR
+
+
+var section = document.querySelector('section > summary > p');
+var button = document.querySelector('section > summary > button');
+
+var show = function () {
+	section.classList.toggle('show')
+}
+
+button.addEventListener('click', show);
+
+
+
+
+
+

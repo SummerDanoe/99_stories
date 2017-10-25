@@ -10,9 +10,9 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 }
-/*=================
-  ====Dropdown=====
-  =================*/
+/*==============
+  ===Dropdown===
+  ==============*/
 header {
 	position: fixed;
 	background-color: #ffc917;
@@ -20,6 +20,7 @@ header {
 	top: 0;
 	left: 0;
 	height: 2em;
+	z-index:2;/*ookal stond*/
 }
 header img {
 /*doe dit later ik heb hier echt geen zin in nu*/
@@ -45,9 +46,18 @@ nav a:hover, nav a:active {
 	color: #fff;
 	background: #058cf5;
 }
-/*=================
-  =====Kaartje=====
-  =================*/
+/*=============
+  ===Kaartje===
+  =============*/
+section {
+	width: 15em;
+	margin: 2em;
+	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
+	background-color: white;
+	flex-grow: 0.3;
+	max-height: 23em;/* hoogte als de kaart ingeklapt is*/
+	z-index:0;
+}
 /*bovenste gedeelte*/
 
 span {
@@ -59,7 +69,7 @@ span .rondje {
 	position: absolute;
 	top: 1.5em;
 	right: 1.5em;
-	z-index: 1;
+	z-index: 0;
 	background-color: darkred;
 	width: 3.5em;
 	height: 3.5em;
@@ -96,73 +106,25 @@ section summary h3 {
 	font-size: 1em;
 	font-weight: 400;
 }
+section summary p{
+	display:none;
+}
+/*=====================================
+  ===kaartje javascript toggle geval===
+  =====================================*/
 section summary p {
 	color: black;
 	font-size: 0.8em;
 	line-height: 1.8em;
+  display:none;
 }
-section summary footer {
-	margin: 2em 0 0;
-	color: black;
+section summary p.show {
+  display:block;
 }
-/*=================================================
-  =====hover kaartje HELP HIER IS HET PROBLEEM=====
-  =================================================*/
+/*====================
+  ===kaartje button===
+  ====================*/
 
-
-section {
-	width: 15em;
-	margin: 2em;
-	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
-	z-index: -1;
-	background-color: white;
-	flex-grow: 0.3;
-	max-height: 23em;/* hoogte als de kaart ingeklapt is*/
-	position: relative;
-	box-sizing: border-box;
-	overflow: hidden;
-	-webkit-transition: .5s ease-out;
-	transition: .5s ease-out;
-}
-section.active {
-	/* de hoogte van de kaart indien uitgeschoven */
-	height: 30em;
-}
-
-/*=========================
-  ===handvat van kaartje===
-  =========================*/
-
-section .card-handvat {
-	background-color: rgba(255, 255, 255, .75);
-	color: rgb(55, 51, 47); /* kleur van het pijltje op het handvat */
-	position: absolute;
-	display: block;
-	box-sizing: border-box;
-	bottom: 0;
-	left: 50%;
-	height: 1.5rem;
-	width: 3rem;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
-	font-size: 1rem;
-	text-align: center;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-}
-section .card-handvat::after {
-	content: "\25BC";
-	position: absolute;
-	display: block;
-	width: 1rem;
-	height: 1rem;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -25%);
-}
-section.active .card-handvat::after {
-	content: "\25B2";
-	transform: translate(-50%, -50%);
-}
 /*======================
   ===bovenste kaartje===
   ======================*/
@@ -170,9 +132,9 @@ section:first-of-type {
 	height: 15em;
 	background-color: rgba(0, 48, 130/*, 0.8*/);/*opacity minder dan 1 is lelijk*/
 }
-/*=========================
-  ==Positionering Kaartje==
-  =========================*/
+/*===========================
+  ===Positionering Kaartje===
+  ===========================*/
 
 main {
 	margin-top: 7em;
