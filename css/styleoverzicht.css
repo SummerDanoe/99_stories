@@ -1,204 +1,174 @@
 @charset "UTF-8";
 /* CSS Document */
-
-/*=====css reset=====*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+* {
+	box-sizing: border-box;
+	font-family: Segoe UI, Myriad, Verdana, sans-serif;
 }
 body {
-	line-height: 1;
+	background-color: #E6E6E9;
+	background-image: url("../images/meneer1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
 }
-ol, ul {
+/*==============
+  ===Dropdown===
+  ==============*/
+header {
+	position: fixed;
+	background-color: #ffc917;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	height: 2em;
+	z-index:2;/*ookal stond*/
+}
+button{
+	background:none;
+	border:none;	
+}
+header img {
+/*doe dit later ik heb hier echt geen zin in nu*/
+}
+header nav {
+	display: none;
+	position: absolute;
 	list-style: none;
+	top: 30px;
+	left: 0;
+	padding: 7px;
+	width: 320px;
 }
-blockquote, q {
-	quotes: none;
+header nav.open{
+	display:block;
+	top: 30px;
+	left: 0;
+	padding: 7px;
+	width: 320px;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-*{
-	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif; /*werkte eerst wel maar nu niet meer*/
-	margin:0;
-	padding:0;
-}
-
-/* =====Dropdown=====*/
-
-header {   
-    color: white;
-	width: 100%;
-	height:2em;
-	border: none;
-	background-color: #F5C832;
-    position: fixed; 
-    top: 0;/*zet header vast aan bovenkant viewport*/
-
-}
-header img{
-	float: right;
-	height:2em;
-	width:auto;
-}
-header button{
-	float:left;
- 	border:none;
-	background-color:transparent;
-}
-
-/*bron:https://www.w3schools.com/howto/howto_css_fixed_menu.asp*/
-
-nav {
-    display: none;
-	margin-top:2em;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1; /*ik weet niet wat dit is */
-	transition: 0.3s; /* werkt niet?*/
-}
-
 nav a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-
+	display: block;
+	margin: 0;
+	padding: 7px 10px;
+	background: #fff;
+	color: #030303;
+	text-decoration: none;
 }
-nav a input{
-	width:auto;
+nav a:hover, nav a:active {
+	color: #fff;
+	background: #058cf5;
+}
+/*=============
+  ===Kaartje===
+  =============*/
+section {
+	width: 15em;
+	margin: 3em 2em;
+	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
+	background-color: white;
+	flex-grow: 0.2;
+	height: 23em;
+	z-index:0;
+	position:relative;
+}
+/*bovenste gedeelte*/
+
+span {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+span .rondje {
+	position: absolute;
+	top: 1.5em;
+	right: 1.5em;
+	z-index: 0;
+	background-color: darkred;
+	width: 3.5em;
+	height: 3.5em;
+	padding: 1em 0;
+	border-radius: 100%;
+	color: white;
+	font-weight: 500;
+	text-align: center;
+}
+span .rondje p {
+	margin-top: 0.15em;
+}
+span img {
+	width: 120%;
+}
+/*onderste gedeelte*/
+section summary {
+	bottom: 0;
+	background: white;
+	width: 100%;
+	padding: 1em;
+	height:15.5em;
+	
+}
+section summary h2 {
+	margin: 0;
+	padding-bottom: 0.5em;
+	color: black;
+	font-size: 1.5em;
+	font-weight: 700;
 }
 
-nav a:hover {
-	background-color: #f1f1f1
-
+section summary p {
+	color: black;
+	font-size: 0.8em;
+	line-height: 1.8em;
+	
 }
-
-header:hover nav {
-    display: block;
+section summary a, section summary footer{
+	display:inline;
+	margin-top:1em;
 }
-
-header button:hover header button {
-    background-color: #F5C832;
-}
-
-body{
-	padding-top:2em;
-}
-/*=====Accordion=====*/
-
-.accordion{
-    margin:50px auto;
-    width: 380px;
-    background: #ccc;
+section summary a{
+	text-decoration:none;
+	color: #fff;
     cursor: pointer;
-    .item{
-        height: 100px;
-        h3{
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%;
-            padding-left: 50px;
-            font-family: $mainfont;
-            font-size: 20px;
-            font-weight: 400;
-        }
-        img{
-            padding-left: 15px;
-            width: 30px;
-            vertical-align: middle;
-        }
-        h3:before{
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%;
-        } 
-    }
-    .item:first-of-type{
-        background: $Mahogany;
-        color: $GoldenSand;
-    }
-    .item:nth-of-type(2){
-        background: $AppleBlossom;
-        color: $EggWhite;
-    }
-    .item:nth-of-type(3){
-        background: $GoldenSand;
-        color: $Mahogany;
-    }
-    .item:nth-of-type(4){
-        background: $EggWhite;
-        color: $OrangeRoughy;
-    }
-    .item:last-of-type{
-        background: $OrangeRoughy;
-        color: $EggWhite;
-    }
-    p{
-        font-family: $mainfont;
-        font-size: 18px;
-        font-weight: 400;
-        padding: 15px;
-        display: none;
-        box-shadow: inset 0 3px 7px rgba(#000, 0.2);
-    }
-    p:first-of-type{
-        background: $Mahogany;
-        color: $GoldenSand;
-    }
-    p:nth-of-type(2){
-        background: $AppleBlossom;
-        color: $EggWhite;
-    }
-    p:nth-of-type(3){
-        background: $GoldenSand;
-        color: $Mahogany;
-        
-    }
-    p:nth-of-type(4){
-        background: $EggWhite;
-        color: $OrangeRoughy;
-    }
-    p:last-of-type{
-        background: $OrangeRoughy;
-        color: $EggWhite;
-    }
+    box-shadow: inset 0 -3.125rem 0 #005ca0;
+	padding:0.5em;
+	margin-left:0.5em;
+}
+
+
+/*===========================
+  ===Positionering Kaartje===
+  ===========================*/
+
+main {
+	margin-top: 7em;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+/*=================
+  ===breakpoints===
+  =================
+*/
+/*breakpoint 2*/
+@media(min-width:40em) {
+body {
+	background-image: url(../images/meneer2.jpg)
+}
+main {
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+section {
+	flex-grow: 0;
+}
+
+}
+
+
+/*breakpoint 5*/
+@media(min-width:100em) {/*mijn beeldscherm thuis is extreem groot, en ik heb geen zin om daar rekening mee te houden.*/
+* {
+	background-color: red;
+	color: red;
+}
 }
