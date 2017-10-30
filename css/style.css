@@ -22,10 +22,14 @@ header {
 	height: 2em;
 	z-index:2;/*ookal stond*/
 }
+button{
+	background:none;
+	border:none;	
+}
 header img {
 /*doe dit later ik heb hier echt geen zin in nu*/
 }
-nav {
+header nav {
 	display: none;
 	position: absolute;
 	list-style: none;
@@ -34,7 +38,7 @@ nav {
 	padding: 7px;
 	width: 320px;
 }
-nav.active{
+header nav.open{
 	display:block;
 	top: 30px;
 	left: 0;
@@ -58,11 +62,11 @@ nav a:hover, nav a:active {
   =============*/
 section {
 	width: 15em;
-	margin: 2em;
+	margin: 3em 2em;
 	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
 	background-color: white;
-	flex-grow: 0.3;
-	max-height: 23em;/* hoogte als de kaart ingeklapt is*/
+	flex-grow: 0.2;
+	height: 23em;
 	z-index:0;
 	position:relative;
 }
@@ -99,6 +103,7 @@ section summary {
 	background: white;
 	width: 100%;
 	padding: 1em;
+	height:15.5em;
 	
 }
 section summary h2 {
@@ -108,64 +113,63 @@ section summary h2 {
 	font-size: 1.5em;
 	font-weight: 700;
 }
-section summary h3 {
-	margin: 0;
-	padding: 0 0 1em;
-	color: darkred;
-	font-size: 1em;
-	font-weight: 400;
-}
+
 section summary p {
 	color: black;
 	font-size: 0.8em;
 	line-height: 1.8em;
-  display:none;
+	
 }
-/*=====================================
-  ===kaartje javascript toggle geval===
-  =====================================*/
-
-section summary p.show {
-  display:block;
-	margin-bottom:5em;
-
+section summary a, section summary footer{
+	display:inline;
+	margin-top:1em;
 }
-section span.show{
-	display:none;
+section summary a{
+	text-decoration:none;
+	color: #fff;
+    cursor: pointer;
+    box-shadow: inset 0 -3.125rem 0 #005ca0;
+	padding:0.5em;
+	margin-left:0.5em;
 }
-/*====================
-  ===kaartje button===
-  ====================*/
-/*
-section summary button{
-	position:absolute;
-	bottom:0;
-	left:6.5em;
-	border:none;
-	display:block;
-	height:1em;
-	width:1em;
-	background-color:orange;
 
 
-}
-section summary button.show{
-display:none;
-}*/
 /*======================
   ===bovenste kaartje===
   ======================*/
 section:first-of-type {
 	height: 15em;
-	background-color: rgba(0, 48, 130/*, 0.8*/);
+	background-color: rgba(0, 48, 130);
+	color:white;
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
-	color:white;
+	width:16em;
+
 
 }
+section:first-of-type > *{
+	margin:auto;
+	text-align:center;
+}
+
 section:first-of-type input{
+	width:10rem;
+	height:2rem;
+	border-radius: 1em;
+	border:none;
 	
+	
+}
+
+section:first-of-type button{
+	color:rgba(0, 48, 130);
+	background-color: #e6b517;
+font-size:1em;
+box-shadow: 0 -.125rem 0 #cfa317 inset;
+width: 10em;
+	border-radius:1em;
+
 }
 /*===========================
   ===Positionering Kaartje===
@@ -181,10 +185,6 @@ main {
 /*=================
   ===breakpoints===
   =================
-
-standaard sheet is voor mobiel
-40em+ is voor tablet
-60em
 */
 /*breakpoint 2*/
 @media(min-width:40em) {
