@@ -10,3 +10,5 @@ var open = function () {
 button.addEventListener('click', open);
 
 
+//alert voor form
+//document.getElementById('submit').addEventListener("click", function(){ alert("Hello World!"); });

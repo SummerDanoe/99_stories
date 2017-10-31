@@ -10,53 +10,57 @@
 
 <body>
 <header>
- <a><img src="images/nslogo.png"></a>
-  <button><img src="images/hamburger.png"></button>
- 	 <nav>
-    	<a href="#">Verhalen</a>
-    	<a href="inloggen.html">inloggen</a>
-    </nav>
+
+	<button><img src="images/hamburger.png"></button>
+	
+	<nav>
+		<a href="overzicht.html">Overzicht</a>
+		<a href="inloggen.html">inloggen</a>
+	</nav>
+	
 </header>
   
    <main>  
-   <h1>Inschrijven</h1>
-    <form>
-		     <form action="./index.html" method="get">
-        
-            <label for="voornaam">Voornaam</label>
+ 
+
+		 <form>
+		     
+		  <h1>Inschrijven</h1>
+<!--Voornaam-->  
+            <label for="voornaam" required>Voornaam</label>
         
             <input id="voornaam" type="text">
-        
+<!--Achternaam-->
             <label for="achternaam">Achternaam</label>
             
-            <input  id="achternaam" type="password" required>
+            <input  id="achternaam" type="text" required>
             
+<!--E-mail--> 
             <label for="emailadres">E-mailadres</label>
             
-            <inputd id="emailadres" type="password" required placeholder="noreply@gmail.com">
-            
-            <label for="wachtwoord">Wachtwoord</label>
+            <input id="emailadres" type="email" required placeholder="voorbeeld@gmail.com">
+<!--Wachtwoord 1-->          
+            <label for="wachtwoord1">Wachtwoord</label>
         
-            <input id="wachtwoord" type="text" required> 
+            <input id="wachtwoord1" type="password" required> 
+ <!--Wachtwoord 2-->                 
+            <label for="wachtwoord2">Bevestig wachtwoord</label>
             
-            <label for="bevestigwachtwoord">Bevestig wachtwoord</label>
-            
-            <input id="bevestigwachtwoord" type="text" required> 
-            
-            <label for="telefoon">Telefoon</label>
-        
-            <input  id="telefoon" type="text" required placeholder="+31 612 345 67">
-        
-            <input id="submit" type="submit" value="Inschrijven">
-        
-            <h4>Heb je al een account?</h4>
-            
-            <input id="aanmelden" type="submit" value="Login" onclick="window.location.href='login.html'">
-            
-        </form>
-        
-          
- 
-				</main>
+            <input id="wachtwoord2" type="password" required> 
+        <label for="spam">Mogen wij je email's sturen?</label>
+           <input id="spam" type="checkbox">
+            <input id="inschrijven" type="submit" value="Inschrijven" required>
+		 </form>
+        <form>
+        	<h1>inloggen</h1>
+        	<label for="inlogemail">E-mail</label>
+		   <input id="inlogemail" type="email">
+		   <label for="inlogwachtwoord">Wachtwoord</label>
+		   <input id="inlogwachtwoord" type="password">
+		    <input id="inloggen" type="submit" value="Inloggen" required>
+	   </form>
+    </main>
+    <script src="javascript/index.js"
+    ></script>
 </body>
 </html>

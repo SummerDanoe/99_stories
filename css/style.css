@@ -20,11 +20,11 @@ header {
 	top: 0;
 	left: 0;
 	height: 2em;
-	z-index:2;/*ookal stond*/
+	z-index: 2;/*ookal stond*/
 }
-button{
-	background:none;
-	border:none;	
+button {
+	background: none;
+	border: none;
 }
 header img {
 /*doe dit later ik heb hier echt geen zin in nu*/
@@ -38,8 +38,8 @@ header nav {
 	padding: 7px;
 	width: 320px;
 }
-header nav.open{
-	display:block;
+header nav.open {
+	display: block;
 	top: 30px;
 	left: 0;
 	padding: 7px;
@@ -65,10 +65,9 @@ section {
 	margin: 3em 2em;
 	box-shadow: 0 0.2em 0.4em 0 rgba(0, 0, 0, 0.20);
 	background-color: white;
-	flex-grow: 0.2;
 	height: 23em;
-	z-index:0;
-	position:relative;
+	z-index: 0;
+	position: relative;
 }
 /*bovenste gedeelte*/
 
@@ -103,8 +102,7 @@ section summary {
 	background: white;
 	width: 100%;
 	padding: 1em;
-	height:15.5em;
-	
+	height: 15.5em;
 }
 section summary h2 {
 	margin: 0;
@@ -113,63 +111,53 @@ section summary h2 {
 	font-size: 1.5em;
 	font-weight: 700;
 }
-
 section summary p {
 	color: black;
 	font-size: 0.8em;
 	line-height: 1.8em;
-	
 }
-section summary a, section summary footer{
-	display:inline;
-	margin-top:1em;
+section summary a, section summary footer {
+	display: inline;
+	margin-top: 1em;
 }
-section summary a{
-	text-decoration:none;
+section summary a {
+	text-decoration: none;
 	color: #fff;
-    cursor: pointer;
-    box-shadow: inset 0 -3.125rem 0 #005ca0;
-	padding:0.5em;
-	margin-left:0.5em;
+	cursor: pointer;
+	box-shadow: inset 0 -3.125rem 0 #005ca0;
+	padding: 0.5em;
+	margin-left: 0.5em;
 }
-
-
 /*======================
   ===bovenste kaartje===
   ======================*/
 section:first-of-type {
 	height: 15em;
-	background-color: rgba(0, 48, 130);
-	color:white;
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	width:16em;
-
-
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 16em;
 }
-section:first-of-type > *{
-	margin:auto;
-	text-align:center;
+section:first-of-type > * {
+	margin: auto;
+	text-align: center;
 }
-
-section:first-of-type input{
-	width:10rem;
-	height:2rem;
-	border-radius: 1em;
-	border:none;
-	
-	
+section:first-of-type h1 {
+font-size:1.5em;
 }
-
-section:first-of-type button{
-	color:rgba(0, 48, 130);
-	background-color: #e6b517;
-font-size:1em;
-box-shadow: 0 -.125rem 0 #cfa317 inset;
-width: 10em;
-	border-radius:1em;
-
+section:first-of-type input {
+	width: 12rem;
+	height: 2rem;
+}
+section:first-of-type button {
+	width: 12rem;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: inset 0 -3.125rem 0 #005ca0;
+	padding: 1em;
+	margin-bottom:1em;
 }
 /*===========================
   ===Positionering Kaartje===
