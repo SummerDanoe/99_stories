@@ -21,28 +21,42 @@
    <main>  
    <h1>Inschrijven</h1>
     <form>
-			<label name="voornaam">Voornaam</label>
-            <input name="voornaam" type="text">
+		     <form action="./index.html" method="get">
+        
+            <label for="voornaam">Voornaam</label>
+        
+            <input id="voornaam" type="text">
+        
+            <label for="achternaam">Achternaam</label>
             
-            <label name="achternaam">Achternaam</label>
-            <input name="achternaam" type="text" required>
+            <input  id="achternaam" type="password" required>
             
-            <label name="gebortedatum">Gebortedatum</label>
-            <input name="gebortedatum" type="date" required>
+            <label for="emailadres">E-mailadres</label>
             
-            <label name="telefoon">Telefoon</label>
-            <input name="telefoon" type="tel" value="+31" required>
+            <inputd id="emailadres" type="password" required placeholder="noreply@gmail.com">
             
-            <label name="email">Email</label>
-            <input name="email" type="email" required>
+            <label for="wachtwoord">Wachtwoord</label>
+        
+            <input id="wachtwoord" type="text" required> 
             
-            <label name="wachtwoord">Wachtwoord</label>
-            <input name="wachtwoord" type="password" required>
+            <label for="bevestigwachtwoord">Bevestig wachtwoord</label>
             
-            <button type="submit">verstuur</button>
+            <input id="bevestigwachtwoord" type="text" required> 
+            
+            <label for="telefoon">Telefoon</label>
+        
+            <input  id="telefoon" type="text" required placeholder="+31 612 345 67">
+        
+            <input id="submit" type="submit" value="Inschrijven">
+        
+            <h4>Heb je al een account?</h4>
+            
+            <input id="aanmelden" type="submit" value="Login" onclick="window.location.href='login.html'">
+            
+        </form>
+        
           
-    </form>
-</main> 
-
+ 
+				</main>
 </body>
 </html>
