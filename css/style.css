@@ -25,9 +25,13 @@ header {
 button {
 	background: none;
 	border: none;
+	margin-top:0.15em;
+	
 }
-header img {
-/*doe dit later ik heb hier echt geen zin in nu*/
+[src="images/nslogo.png"]{
+	height:2em;
+	position:fixed;
+	right:0;
 }
 header nav {
 	display: none;
@@ -75,13 +79,13 @@ div {
 	display: block;
 	overflow: hidden;
 	position: relative;
+	height:10em;
 }
 div span {
 	position: absolute;
 	top: 1.5em;
 	right: 1.5em;
 	z-index: 0;
-	background-color: darkred;
 	width: 3.5em;
 	height: 3.5em;
 	padding: 1em 0;
@@ -89,12 +93,23 @@ div span {
 	color: white;
 	font-weight: 500;
 	text-align: center;
+	background-color:black;
+}
+.rood{
+	background-color:red;
+}
+.blauw{
+	background-color:blue;
+}
+.roze{
+	background-color:deeppink;
 }
 div span p {
 	margin-top: 0.15em;
 }
 div img {
 	width: 120%;
+	height:10em;
 }
 /*onderste gedeelte*/
 section summary {
@@ -106,7 +121,6 @@ section summary {
 }
 section summary h2 {
 	margin: 0;
-	padding-bottom: 0.5em;
 	color: black;
 	font-size: 1.5em;
 	font-weight: 700;
@@ -132,7 +146,7 @@ section summary a {
   ===bovenste kaartje===
   ======================*/
 section:first-of-type {
-	height: 15em;
+	height:15em;
 	background-color: white;
 	display: flex;
 	flex-direction: column;

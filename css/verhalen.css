@@ -1,0 +1,121 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	margin:0;
+	padding:0;
+
+}
+header {
+	position: fixed;
+	background-color: #ffc917;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	height: 2em;
+	z-index: 2;/*ookal stond*/
+}
+button {
+	background: none;
+	border: none;
+	margin-top:0.15em;
+	
+}
+[src="../../images/nslogo.png"]{
+	height:2em;
+	position:fixed;
+	right:0;
+}
+header nav {
+	display: none;
+	position: absolute;
+	list-style: none;
+	top: 30px;
+	left: 0;
+	padding: 7px;
+	width: 320px;
+}
+header nav.open {
+	display: block;
+	top: 30px;
+	left: 0;
+	padding: 7px;
+	width: 320px;
+}
+nav a {
+	display: block;
+	margin: 0;
+	padding: 7px 10px;
+	background: #fff;
+	color: #030303;
+	text-decoration: none;
+}
+nav a:hover, nav a:active {
+	color: #fff;
+	background: #058cf5;
+}
+/*=============
+/*Vrijdag13*/
+[src="vrijdagmiddel.jpg"], [src="vrijdaggroot.jpg"]{
+	display:none;
+}
+
+[src="vrijdagklein.jpg"]{
+	height:100vh;
+	
+}
+/*Moe*/
+[src="moemiddel.jpg"], [src="moegroot.jpg"]{
+	display:none;
+}
+
+[src="moeklein.jpg"]{
+	width:100%;
+}
+@media(min-width:40em){
+	/*Vrijdag13*/
+	[src="vrijdagklein.jpg"], [src="vrijdaggroot.jpg"]{
+	display:none;
+}
+
+[src="vrijdagmiddel.jpg"]{
+	display:block;
+	height:100vh;
+	
+}
+/*Moe*/
+	[src="moeklein.jpg"], [src="moegroot.jpg"]{
+	display:none;
+}
+
+[src="moemiddel.jpg"]{
+	display:block;
+	width:100%;
+	
+}
+}
+@media(min-width:60em){
+	/*Vrijdag13*/
+	[src="vrijdagklein.jpg"], [src="vrijdagmiddel.jpg"]{
+	display:none;
+}
+
+[src="vrijdaggroot.jpg"]{
+	display:block;
+	height:100vh;
+	
+	
+}
+/*Moe*/
+	[src="moeklein.jpg"], [src="moemiddel.jpg"]{
+	display:none;
+}
+
+[src="moegroot.jpg"]{
+	display:block;
+	width:100%;
+	
+	
+	
+}
+}
